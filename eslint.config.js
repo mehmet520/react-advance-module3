@@ -26,7 +26,7 @@ export default defineConfig([
     rules: {
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
       // 'no-console': 'error',
-      'eqeqeq': 'error',
+      eqeqeq: 'error',
       'prefer-const': 'error',
       'no-extra-semi': 'error',
     },
@@ -55,7 +55,6 @@ export default defineConfig([
       ],
       'react/react-in-jsx-scope': 'off',
       'jsx-a11y/alt-text': 'error',
-
     },
     settings: {
       react: { version: 'detect' },
