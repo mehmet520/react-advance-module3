@@ -5,13 +5,15 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
 import { defineConfig, globalIgnores } from 'eslint/config'
+import prettier from 'eslint-plugin-prettier'
+import eslintConfigPrettier from 'eslint-config-prettier'
 
 export default defineConfig([
   globalIgnores(['dist', 'build', 'node_modules']),
   {
     files: ['**/*.{js,mjs,cjs,jsx}'],
-    plugins: { js },
-    extends: [js.configs.recommended],
+    plugins: { js, prettier },
+    extends: [js.configs.recommended, eslintConfigPrettier],
     languageOptions: {
       sourceType: 'module',
       parserOptions: {
@@ -29,6 +31,7 @@ export default defineConfig([
       eqeqeq: 'error',
       'prefer-const': 'error',
       'no-extra-semi': 'error',
+      'prettier/prettier': 'error',
     },
     settings: {
       react: { version: 'detect' },
