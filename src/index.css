@@ -5,7 +5,11 @@
 @layer base {
   /* Global Reset & Root Variables */
   :root {
-    @apply bg-white font-sans leading-[1.5] font-normal antialiased;
+    background-color: #fff;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
     color-scheme: light;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -61,6 +65,6 @@
 /* Component Specific Styles */
 @layer components {
   .card {
-    @apply rounded-lg bg-slate-200 p-6 shadow-md drop-shadow-lg dark:bg-gray-800;
+    @apply m-3 rounded-lg bg-slate-200 p-6 shadow-md drop-shadow-lg dark:bg-gray-800;
   }
 }

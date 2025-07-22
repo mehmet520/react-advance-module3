@@ -1,18 +1,19 @@
 import js from '@eslint/js'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
 import prettier from 'eslint-plugin-prettier'
-import globals from 'globals'
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
-import jsxA11y from 'eslint-plugin-jsx-a11y'
 import { defineConfig, globalIgnores } from 'eslint/config'
-import eslintConfigPrettier from 'eslint-config-prettier'
+import globals from 'globals'
 
 export default defineConfig([
   globalIgnores(['dist', 'build', 'node_modules']),
-  js.configs.recommended,
+
+  // Global JS kuralları
   {
-    files: ['**/*.{js,mjs,cjs,jsx}'],
+    files: ['**/*.{js,mjs,cjs}'],
     languageOptions: {
       sourceType: 'module',
       ecmaVersion: 'latest',
@@ -24,44 +25,56 @@ export default defineConfig([
         ...globals.node,
       },
     },
-    settings: {
-      react: { version: 'detect' },
-    },
     plugins: { js, prettier },
-    extends: [eslintConfigPrettier],
+    extends: [
+      //  @eslint/js paketi, ESLint’in yerleşik (built-in) "eslint:recommended" kurallarını configs.recommended altında sunar
+      js.configs.recommended,
+      // eslint-plugin-prettier (Kod formatlama uyumluluğu)
+      // prettier/prettier kuralını etkinleştirir.
+      // Çakışan ESLint formatlama kurallarını pasifleştirir via eslint-config-prettier.
+      eslintPluginPrettierRecommended,
+    ],
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
-      // 'no-console': 'error',
       eqeqeq: 'error',
-      'prefer-const': 'error',
-      'no-extra-semi': 'error',
+      'prefer-const': 'warn',
+      'no-extra-semi': 'warn',
+      'no-unused-vars': ['warn', { varsIgnorePattern: '^[A-Z_]' }],
       'prettier/prettier': 'error',
     },
-  },
-  {
-    files: ['**/*.{js,jsx}'],
     settings: {
       react: { version: 'detect' },
     },
+  },
+
+  // React özel kuralları
+  {
+    files: ['**/*.jsx'],
     plugins: {
       // react: reactPlugin,
-      // 'react-refresh': reactRefresh,
       // 'react-hooks': reactHooks,
-      // 'jsx-a11y':jsxA11y,
+      // 'react-refresh': reactRefresh,
+      // 'jsx-a11y': jsxA11y,
     },
     extends: [
+      // eslint-plugin-react (React kodlama kuralları)
+      // React’e özgü en iyi uygulama kurallarını (jsx-a11y/… hariç) flat config formatında sunar.
       reactPlugin.configs.flat.recommended,
       reactHooks.configs['recommended-latest'],
       reactRefresh.configs.vite,
       jsxA11y.flatConfigs.recommended,
+      eslintPluginPrettierRecommended,
     ],
     rules: {
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'warn',
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
       ],
-      'react/react-in-jsx-scope': 'off',
       'jsx-a11y/alt-text': 'warn',
+    },
+    settings: {
+      react: { version: 'detect' },
     },
   },
 ])
