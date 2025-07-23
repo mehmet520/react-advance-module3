@@ -1,9 +1,20 @@
 import Box from 'components/Box'
+import DeleteButton, { List } from 'components/DeleteButton'
+import MouseTracker from 'components/MouseTracker'
+import ToggleButton from 'components/ToogleButton'
 import React from 'react'
 
 function App() {
-  const pElement = React.createElement('p', null, 'icerik')
-  const divElement = React.createElement('div', { className: 'card' }, pElement)
+  const h3Element = React.createElement(
+    'h3',
+    null,
+    "React.createElement ('h3', {className: 'card'}, h3Element as 'children')"
+  )
+  const divElement = React.createElement(
+    'div',
+    { className: 'card' },
+    h3Element
+  )
   return (
     <>
       <h1 className="text-center text-3xl text-cyan-500">
@@ -11,9 +22,19 @@ function App() {
       </h1>
       <div className="card"></div>
       <Box>
-        <p>Box Icerigi</p>
+        <p>Tatli Menu</p>
+        <List />
+        <DeleteButton />
       </Box>
       {divElement}
+      <MouseTracker>
+        {(pos) => (
+          <h3>
+            Mouse Position: x: {pos.x}, y: {pos.y}
+          </h3>
+        )}
+      </MouseTracker>
+      <ToggleButton />
     </>
   )
 }
