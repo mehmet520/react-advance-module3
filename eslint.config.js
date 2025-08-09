@@ -77,4 +77,12 @@ export default defineConfig([
       react: { version: 'detect' },
     },
   },
+  {
+    files: ['**/*.test.jsx'],
+    languageOptions: {
+      globals: {
+        jest: true,
+      },
+    },
+  },
 ])

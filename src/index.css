@@ -51,7 +51,7 @@
   }
 
   button {
-    @apply mx-2 rounded border border-transparent bg-blue-700 px-4 py-2 font-medium text-white shadow-2xl drop-shadow-2xl transition-colors duration-200 hover:border-gray-500 hover:bg-blue-600 hover:brightness-100 focus:ring-4 focus:ring-blue-600 focus:outline-none;
+    @apply mx-2 mt-4 rounded border border-transparent bg-blue-700 px-4 py-2 font-medium text-white shadow-md shadow-gray-400 drop-shadow-md transition-colors duration-200 hover:border-gray-500 hover:bg-blue-600 hover:brightness-100 focus:ring-4 focus:ring-blue-600 focus:outline-none;
   }
   input,
   input[type='text'],
@@ -65,6 +65,6 @@
 /* Component Specific Styles */
 @layer components {
   .card {
-    @apply m-3 rounded-lg bg-slate-200 p-6 shadow-md drop-shadow-lg dark:bg-gray-800;
+    @apply my-4 rounded-lg bg-slate-200 p-6 shadow-md drop-shadow-lg dark:bg-gray-800;
   }
 }

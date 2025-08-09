@@ -5,14 +5,19 @@
     "target": "ES2020",
     "moduleResolution": "Node",
     "paths": {
+      "assets/*": ["assets/*"],
       "components/*": ["components/*"],
-      "features/*": ["features/*"],
-      "pages/*": ["pages/*"],
+      "config/*": ["config/*"],
       "contexts/*": ["contexts/*"],
+      "features/*": ["features/*"],
       "hooks/*": ["hooks/*"],
-      "utils/*": ["utils/*"],
-      "assets/*": ["assets/*"]
+      "layouts/*": ["layouts/*"],
+      "pages/*": ["pages/*"],
+      "services/*": ["services/*"],
+      "styles/*": ["styles/*"],
+      "utils/*": ["utils/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "build"]
 }

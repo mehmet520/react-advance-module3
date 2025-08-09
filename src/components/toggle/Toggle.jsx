@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function Toogle({ children }) {
+export default function Toggle({ children }) {
   const [isOn, setIsOn] = useState(false)
   const toggle = () => {
     setIsOn((prev) => !prev)

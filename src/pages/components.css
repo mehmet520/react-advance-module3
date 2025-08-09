@@ -1,0 +1,33 @@
+/* @reference "../index.css"; */
+@reference 'tailwindcss';
+
+@layer components {
+  .title {
+    @apply mb-4 text-xl font-bold text-indigo-500;
+  }
+  .paragraph-inside-card {
+    @apply text-blue-300 italic;
+  }
+
+  .paragraph {
+    @apply mb-2 text-base leading-relaxed text-gray-800 dark:text-gray-200;
+  }
+
+  .button {
+    @apply rounded bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-500;
+  }
+
+  .container {
+    @apply rounded-lg bg-white p-6 shadow-md dark:bg-zinc-800;
+  }
+  .order-card {
+    @apply my-8 rounded bg-[#f9f9f9] p-6;
+  }
+  .order-list {
+    @apply m-auto max-w-md;
+  }
+
+  .card {
+    @apply !my-4 rounded-lg bg-slate-200 !p-4 shadow-md drop-shadow-lg dark:bg-gray-800;
+  }
+}
