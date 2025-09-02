@@ -1,5 +1,6 @@
 import Nav from 'components/nav'
 import PropTypes from 'prop-types'
+import { Outlet } from 'react-router-dom'
 
 export default function DefaultLayout({ children }) {
   return (
@@ -8,7 +9,9 @@ export default function DefaultLayout({ children }) {
         <h2>LOGO</h2>
         <Nav />
       </header>
-      <main className="flex-grow p-6">{children}</main>
+      <main className="flex-grow p-6">
+        <Outlet />
+      </main>
       <footer className="bg-gray-800 p-4 text-center text-gray-200">
         © 2025 My App
       </footer>

@@ -64,12 +64,12 @@ export default function LiveBestellung() {
         />
         <Button
           type="submit"
+          style={{ marginBottom: '2rem' }}
           styleObj={{
             backgroundColor: 'green',
             marginLeft: '2rem',
           }}
           backgroundColor="red"
-          style={{ marginBottom: '2rem' }}
         >
           Hinzufuegen
         </Button>

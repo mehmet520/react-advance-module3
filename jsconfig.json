@@ -6,6 +6,7 @@
     "moduleResolution": "Node",
     "paths": {
       "assets/*": ["assets/*"],
+      "chakra/*": ["chakra/*"],
       "components/*": ["components/*"],
       "config/*": ["config/*"],
       "contexts/*": ["contexts/*"],

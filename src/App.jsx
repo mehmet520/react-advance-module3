@@ -1,17 +1,20 @@
+import DefaultLayout from 'layouts/DefaultLayout'
 import About from 'pages/About'
+import Examples from 'pages/Examples'
 import Home from 'pages/Home'
 import NotFound from 'pages/NotFound'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
+    <Routes>
+      <Route element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/examples" element={<Examples />} />
         <Route path="/about" element={<About />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   )
 }
 

@@ -53,12 +53,17 @@
   button {
     @apply mx-2 mt-4 rounded border border-transparent bg-blue-700 px-4 py-2 font-medium text-white shadow-md shadow-gray-400 drop-shadow-md transition-colors duration-200 hover:border-gray-500 hover:bg-blue-600 hover:brightness-100 focus:ring-4 focus:ring-blue-600 focus:outline-none;
   }
-  input,
+  input:not([type='radio']):not([type='checkbox']):not([type='range']):not(
+      [type='color']
+    ),
   input[type='text'],
   input[type='email'],
   input[type='password'],
   input[type='number'] {
     @apply m-1 w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 shadow-sm transition-colors duration-700 focus:border-blue-600 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-700 dark:bg-zinc-800 dark:text-gray-400 dark:focus:border-blue-400 dark:focus:ring-blue-300;
+  }
+  input[type='radio'] {
+    accent-color: #2563eb;
   }
 }
 

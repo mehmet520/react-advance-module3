@@ -16,6 +16,7 @@ export default defineConfig({
   resolve: {
     alias: {
       assets: path.resolve(__dirname, 'src/assets'),
+      chakra: path.resolve(__dirname, 'src/chakra'),
       components: path.resolve(__dirname, 'src/components'),
       config: path.resolve(__dirname, 'src/config'),
       contexts: path.resolve(__dirname, 'src/contexts'),

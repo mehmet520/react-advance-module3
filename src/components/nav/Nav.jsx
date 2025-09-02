@@ -12,6 +12,13 @@ export default function Nav() {
       >
         Ana Sayfa
       </NavLink>
+
+      <NavLink
+        to="examples"
+        className={({ isActive }) => (isActive ? `${base} ${active}` : base)}
+      >
+        Examples
+      </NavLink>
       <NavLink
         to="/about"
         className={({ isActive }) => (isActive ? `${base} ${active}` : base)}

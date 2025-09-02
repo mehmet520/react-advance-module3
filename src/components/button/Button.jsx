@@ -1,19 +1,21 @@
 import PropTypes from 'prop-types'
 
-export default function Button({ children, ...props }) {
-  console.log('props :>> ', props)
-  console.log('styleObj :>> ', props.styleObj)
+export default function Button({
+  children,
+  styleObj,
+  backgroundColor,
+  style,
+  ...rest
+}) {
   return (
     <button
-      {...props}
-      {...(styleObj || props.backgroundColor
+      {...rest}
+      {...(styleObj || backgroundColor
         ? {
             style: {
-              ...(props.style || {}),
+              ...(style || {}),
               ...(styleObj || {}),
-              ...(props.backgroundColor
-                ? { backgroundColor: props.backgroundColor }
-                : {}),
+              ...(backgroundColor ? { backgroundColor: backgroundColor } : {}),
             },
           }
         : {})}

@@ -7,7 +7,6 @@ import Toggle from 'components/toggle/Toggle'
 import ToggleButton from 'components/toggle/ToggleButton'
 import ToggleButton2 from 'components/toggle/ToggleButton2'
 import LiveBestellung from 'features/live-bestellung/LiveBestellung'
-import DefaultLayout from 'layouts/DefaultLayout'
 import React from 'react'
 
 export default function Home() {
@@ -23,7 +22,7 @@ export default function Home() {
   )
   return (
     <>
-      <DefaultLayout>
+      <>
         <LiveBestellung />
 
         <h1 className="text-center text-3xl text-cyan-500">
@@ -79,7 +78,7 @@ export default function Home() {
             </div>
           )}
         </MouseTracker>
-      </DefaultLayout>
+      </>
     </>
   )
 }
