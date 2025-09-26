@@ -20,6 +20,13 @@ export default function Nav() {
         Examples
       </NavLink>
       <NavLink
+        to="dashboard"
+        className={({ isActive }) => (isActive ? `${base} ${active}` : base)}
+      >
+        Dashboard
+      </NavLink>
+
+      <NavLink
         to="/about"
         className={({ isActive }) => (isActive ? `${base} ${active}` : base)}
       >

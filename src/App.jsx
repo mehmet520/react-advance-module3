@@ -1,5 +1,6 @@
 import DefaultLayout from 'layouts/DefaultLayout'
 import About from 'pages/About'
+import Dashboard from 'pages/Dashboard'
 import Examples from 'pages/Examples'
 import Home from 'pages/Home'
 import NotFound from 'pages/NotFound'
@@ -11,6 +12,8 @@ function App() {
       <Route element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/examples" element={<Examples />} />
+
+        <Route path="dashboard" element={<Dashboard />} />
         <Route path="/about" element={<About />} />
       </Route>
       <Route path="*" element={<NotFound />} />
