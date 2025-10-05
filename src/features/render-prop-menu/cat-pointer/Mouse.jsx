@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 export default function Mouse({ render }) {
   const [mouse, setMouse] = useState({ x: 0, y: 0 })
+  console.log('Mouse calisti.')
 
   useEffect(() => {
     const handleMousemove = (event) => {

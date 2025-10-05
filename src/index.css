@@ -1,5 +1,8 @@
 /* TailwindCSS Directives */
 @import 'tailwindcss';
+@config "../tailwind.config.js"; /* tailwind v4'te gerekli */
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/aspect-ratio";
 
 /* Custom Base Styles */
 @layer base {

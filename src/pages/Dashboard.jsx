@@ -1,10 +1,5 @@
-import CommentList from 'features/hoc-example-cross-cutting-concerns/CommentList'
-import CurriedEnhancedButton from 'features/hoc-example-cross-cutting-concerns/currying/CurriedEnhancedButton'
-import withSubscription from 'features/hoc-example-cross-cutting-concerns/hoc/withSubscription'
-import MouseTracker from 'features/hoc-example-cross-cutting-concerns/mouse-tracker/MouseTracker'
-import selectComments from 'features/hoc-example-cross-cutting-concerns/selectors/selectComments'
-import RenderPropMenu from 'features/render-prop-menu/RenderPropMenu'
-import MouseTrackerCat from 'features/render-prop-menu/cat-pointer/MouseTrackerCat'
+import MyComponent from 'components/MyComponents'
+import DataSourceStructure from 'features/data-source-structure/DataSourceStructure'
 
 // const CommentListWithSubscription = withSubscription(
 //   CommentList,
@@ -31,11 +26,13 @@ export default function Dashboard() {
   return (
     <div>
       <h1 className="text-2xl font-bold">Dashboard</h1>
+      <MyComponent />
       <div>
-        <MouseTrackerCat />
+        {/* <CatWithMouse color="lightgreen" /> */}
+        {/* <MouseTrackerCat /> */}
       </div>
       <div>{/* <RenderPropMenu /> */}</div>
-
+      <DataSourceStructure />
       <div className="card">
         <h2>Yorumlar</h2>
         {/* <CommentListWithSubscription /> */}
