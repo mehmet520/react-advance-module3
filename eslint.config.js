@@ -21,6 +21,7 @@ export default defineConfig([
         ecmaFeatures: { jsx: true },
       },
       globals: {
+        jest: true,
         ...globals.browser,
         ...globals.node,
       },

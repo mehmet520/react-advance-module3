@@ -1,5 +1,7 @@
 import MyComponent from 'components/MyComponents'
+import Kapsayici from 'features/buble-capture/Kapsayici'
 import DataSourceStructure from 'features/data-source-structure/DataSourceStructure'
+import ReactSystem from 'features/react-system/Task'
 
 // const CommentListWithSubscription = withSubscription(
 //   CommentList,
@@ -26,6 +28,8 @@ export default function Dashboard() {
   return (
     <div>
       <h1 className="text-2xl font-bold">Dashboard</h1>
+      <ReactSystem />
+      <Kapsayici />
       <MyComponent />
       <div>
         {/* <CatWithMouse color="lightgreen" /> */}
